@@ -1,0 +1,21 @@
+{
+  "id": "r2",
+  "moduleId": "m2",
+  "title": "Benchmark Datasets for Novel View Synthesis",
+  "estimatedMinutes": 10,
+  "content": "## The Four Standard Benchmarks\n\nThe 3DGS compression literature evaluates almost exclusively on four datasets. Knowing their characteristics is essential for understanding which methods generalize and which overfit to specific scene types.\n\n## Tanks and Temples\n\n**Type**: Large-scale outdoor and indoor capture with industrial equipment\n**Scenes**: Truck, Train, Playground, M60, and others\n**Properties**:\n- High-resolution captures, real-world lighting\n- Unbounded scenes with complex backgrounds\n- Objects of varying scales (a full tank vs. a train car)\n- Challenging for 3DGS because the background extends to infinity\n\n**Why it matters**: The Truck scene is the de facto single-scene benchmark. Most papers report per-scene numbers here, and the Truck has become a calibration point: you can gauge a paper's claim by comparing its Truck PSNR to baseline 3DGS.\n\n## Deep Blending\n\n**Type**: Indoor scenes captured with depth sensors\n**Scenes**: Indoor room scans (DrJohnson, Playroom)\n**Properties**:\n- Contains challenging near-field geometry\n- Significant depth of field and occlusion\n- Scenes with specular surfaces (windows, floors)\n\n**Why it matters**: Tests view-dependent color representation (SH) quality. Methods that aggressively reduce SH degree often show the largest PSNR drops on Deep Blending.\n\n## Mip-NeRF 360\n\n**Type**: 360° capture of unbounded indoor and outdoor scenes\n**Scenes**: garden, bicycle, bonsai, counter, kitchen, room, staircase\n**Properties**:\n- Cameras placed inside the scene, pointing outward — the \"unbounded\" challenge\n- Background extends to infinity in all directions\n- Wide variation in scene complexity\n- 9 scenes, making it statistically robust\n\n**Why it matters**: The unbounded nature requires either spatial contraction (MipNeRF360's \\(\\text{contract}\\) function) or large numbers of Gaussians to cover the background. Compression methods that use spatial quantization must handle the highly non-uniform spatial distribution of Gaussians.\n\n## Synthetic NeRF (Blender)\n\n**Type**: Computer-generated scenes with known ground truth geometry\n**Scenes**: chair, drums, ficus, hotdog, lego, materials, mic, ship\n**Properties**:\n- Perfect ground-truth images (no camera noise, no motion blur)\n- Objects on white backgrounds with complex materials\n- PSNR values are systematically higher (~28–35 dB) than real captures\n\n**Why it matters**: The clean ground truth makes this ideal for measuring rendering quality without confounding factors. Results here are not directly comparable to real-capture datasets — PSNR values will be higher and you should not compare them directly.\n\n## Cross-Dataset Generalization\n\nA key warning from the 3DGS.zip survey: **methods optimized on one dataset may not generalize**. The Synthetic NeRF dataset's object-centric, bounded setup is very different from Mip-NeRF 360's unbounded 360° captures. A compression method that aggressively prunes Gaussians based on viewing-frequency statistics tuned to bounded scenes may badly over-prune the infinite background in unbounded scenes.",
+  "references": [
+    {
+      "label": "Knapitsch et al. 2017",
+      "title": "Tanks and Temples: Benchmarking Large-Scale Scene Reconstruction",
+      "url": "https://dl.acm.org/doi/10.1145/3072959.3073599"
+    },
+    {
+      "label": "Barron et al. 2022",
+      "title": "Mip-NeRF 360: Unbounded Anti-Aliased Neural Radiance Fields",
+      "url": "https://arxiv.org/abs/2111.12077"
+    }
+  ],
+  "nextItem": { "type": "reading", "id": "r3" },
+  "prevItem": { "type": "reading", "id": "r1" }
+}

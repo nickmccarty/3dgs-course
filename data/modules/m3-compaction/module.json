@@ -1,0 +1,56 @@
+{
+  "id": "m3",
+  "title": "Compaction Strategies",
+  "order": 3,
+  "color": "#f59e0b",
+  "prereq": "m2",
+  "learningObjectives": [
+    "Distinguish compression from compaction and explain why they must be optimized jointly.",
+    "Quantify the parameter budget of a full 3DGS representation (59 params × 4 bytes) and identify which attributes dominate.",
+    "Compare SH degree reduction, quaternion reparameterization, and 2D Gaussians as attribute-reduction strategies.",
+    "Contrast standard ADC (clone/split/prune) with improved methods like PixelGS, MCMC, and SUNDAE.",
+    "Explain ScaffoldGS anchors and how HAC/HAC++ exploits spatial correlations for further compression."
+  ],
+  "readings": [
+    {
+      "id": "r1",
+      "title": "Compaction vs. Compression and Attribute Reduction",
+      "estimatedMinutes": 13,
+      "dataPath": "data/modules/m3-compaction/readings/r1-attribute-reduction.json"
+    },
+    {
+      "id": "r2",
+      "title": "Improved Densification and Pruning",
+      "estimatedMinutes": 15,
+      "dataPath": "data/modules/m3-compaction/readings/r2-densification-pruning.json"
+    },
+    {
+      "id": "r3",
+      "title": "Structural Modifications: Anchors, LOD, and Improved Rendering",
+      "estimatedMinutes": 14,
+      "dataPath": "data/modules/m3-compaction/readings/r3-structural-mods.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "q1",
+      "title": "Compaction Strategies",
+      "questionCount": 5,
+      "passingScore": 0.7,
+      "dataPath": "data/modules/m3-compaction/quizzes/q1-strategies.json"
+    },
+    {
+      "id": "q2",
+      "title": "Coding-Aware Training and Structural Methods",
+      "questionCount": 4,
+      "passingScore": 0.7,
+      "dataPath": "data/modules/m3-compaction/quizzes/q2-coding-aware.json"
+    }
+  ],
+  "lab": {
+    "id": "lab3",
+    "title": "Compaction Pipeline: SH Reduction, Pruning, and Size Analysis",
+    "estimatedMinutes": 50,
+    "dataPath": "data/modules/m3-compaction/labs/lab3.json"
+  }
+}

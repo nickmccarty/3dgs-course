@@ -1,0 +1,59 @@
+{
+  "id": "3dgs-course",
+  "title": "Optimizing 3D Scene Representations",
+  "subtitle": "From Gaussian Splatting Compression to Self-Organizing Grids",
+  "version": "1.0.0",
+  "unlockThreshold": 0.6,
+  "modules": [
+    {
+      "id": "m1",
+      "slug": "m1-foundations",
+      "title": "Foundations of 3DGS",
+      "description": "NeRF vs 3DGS, Gaussian math, the rendering pipeline, training via differentiable rasterization, and key extensions.",
+      "order": 1,
+      "prereq": null,
+      "dataPath": "data/modules/m1-foundations/module.json",
+      "color": "#4f6ef7"
+    },
+    {
+      "id": "m2",
+      "slug": "m2-evaluation",
+      "title": "Evaluation & Survey",
+      "description": "Standardized metrics (PSNR, SSIM, LPIPS), benchmark datasets, and why cross-paper comparisons usually fail.",
+      "order": 2,
+      "prereq": "m1",
+      "dataPath": "data/modules/m2-evaluation/module.json",
+      "color": "#22c55e"
+    },
+    {
+      "id": "m3",
+      "slug": "m3-compaction",
+      "title": "Compaction Strategies",
+      "description": "Attribute reduction, improved densification & pruning, structural modifications (ScaffoldGS, HAC), and rendering improvements.",
+      "order": 3,
+      "prereq": "m2",
+      "dataPath": "data/modules/m3-compaction/module.json",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "m4",
+      "slug": "m4-grid-sorting",
+      "title": "Grid-Based Sorting",
+      "description": "Reshaping Gaussians into 2D grids, quality metrics (DPQ, GAF, GDF), and the SOM → SSM → LAS → FLAS algorithm family.",
+      "order": 4,
+      "prereq": "m3",
+      "dataPath": "data/modules/m4-grid-sorting/module.json",
+      "color": "#ec4899"
+    },
+    {
+      "id": "m5",
+      "slug": "m5-permutation-encoding",
+      "title": "Permutation Learning & Encoding",
+      "description": "Neural permutation learning (GradSort, ShuffleSoftSort), quantization, vector quantization, entropy coding, and the full SOG pipeline.",
+      "order": 5,
+      "prereq": "m4",
+      "dataPath": "data/modules/m5-permutation-encoding/module.json",
+      "color": "#8b5cf6"
+    }
+  ]
+}

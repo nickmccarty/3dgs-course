@@ -1,0 +1,17 @@
+{
+  "id": "lab3",
+  "moduleId": "m3",
+  "title": "Compaction Pipeline: SH Reduction, Pruning, and Size Analysis",
+  "estimatedMinutes": 50,
+  "description": "## Lab 3: Building a Compaction Pipeline\n\nYou will build a sequential compaction pipeline on a synthetic 3DGS dataset (50,000 Gaussians with full 59-parameter layout), apply SH degree reduction, opacity-based pruning, and scale-based floater removal, and measure the cumulative size reduction at each step.\n\n### Pipeline Stages\n\n1. **Baseline**: 50K Gaussians, 59 params, float32 — compute exact uncompressed size\n2. **SH reduction**: test degree 0, 1, 2, 3 and measure RMSE impact on reconstructed colors\n3. **Opacity pruning**: sweep thresholds 0.01, 0.05, 0.1 — plot surviving Gaussians vs. threshold\n4. **Scale pruning**: remove large-scale floaters above the 99th percentile of max eigenvalue\n5. **Combined pipeline**: apply all three, report compression ratio and discuss trade-offs\n\n### Quantization Preview\n\nAs a preview of Module 5, you will also measure the entropy of each attribute category and estimate the theoretical minimum bit-width from the Shannon entropy bound.",
+  "objectives": [
+    "Implement SH degree truncation and measure its effect on view-dependent color reconstruction.",
+    "Implement and sweep opacity-threshold pruning, plotting the retention–threshold curve.",
+    "Remove floater Gaussians by thresholding the maximum eigenvalue of the scale matrix.",
+    "Build a combined pipeline and report per-stage size reduction.",
+    "Compute the empirical entropy of each attribute category and discuss quantization headroom."
+  ],
+  "colabUrl": "https://colab.sandbox.google.com/github/nickmccarty/3dgs-course/blob/main/notebooks/lab3_compaction.ipynb",
+  "prevItem": { "type": "quiz", "id": "q2" },
+  "nextItem": null
+}
