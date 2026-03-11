@@ -19,6 +19,26 @@
       "label": "Wu et al. 2024",
       "title": "4D Gaussian Splatting for Real-Time Dynamic Scene Rendering",
       "url": "https://arxiv.org/abs/2310.08528"
+    },
+    {
+      "label": "Kerbl et al. 2024",
+      "title": "A Hierarchical 3D Gaussian Representation for Real-Time Rendering of Very Large Datasets",
+      "url": "https://arxiv.org/abs/2406.12080"
+    },
+    {
+      "label": "Corona et al. 2026",
+      "title": "R3GW: Relightable 3D Gaussians for Outdoor Scenes in the Wild",
+      "url": "https://arxiv.org/abs/2603.02801"
+    },
+    {
+      "label": "Barthel et al. 2025",
+      "title": "CGS-GAN: 3D Consistent Gaussian Splatting GANs for High Resolution Human Head Synthesis",
+      "url": "https://arxiv.org/abs/2505.17590"
+    },
+    {
+      "label": "Wang et al. 2024",
+      "title": "GaussianEditor: Editing 3D Gaussians Delicately with Text Instructions",
+      "url": "https://arxiv.org/abs/2311.16037"
     }
   ],
   "nextItem": { "type": "quiz", "id": "q1" },
