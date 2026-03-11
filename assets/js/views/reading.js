@@ -5,6 +5,7 @@
 import { getApp } from '../app.js';
 import { markReadingComplete, isReadingComplete } from '../store.js';
 import { parseContentWithMath } from '../utils.js';
+import { initDensificationAnimation } from '../densification-anim.js';
 
 function navArrow(item, moduleId, direction) {
   if (!item) return `<div class="nav-arrow-spacer"></div>`;
@@ -141,6 +142,10 @@ export default function renderReading(readingData, moduleData) {
     if (window.hljs) {
       contentEl.querySelectorAll('pre code').forEach(block => window.hljs.highlightElement(block));
     }
+    // Boot canvas animations
+    contentEl.querySelectorAll('canvas[data-densification]').forEach(canvas => {
+      initDensificationAnimation(canvas, canvas.dataset.densification);
+    });
   }
 
   // Mobile info drawer

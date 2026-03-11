@@ -170,6 +170,46 @@
   margin-bottom: var(--space-2);
 }
 
+/* Densification solution cards */
+.densification-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-4) var(--space-5);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  margin: var(--space-3) 0 var(--space-6);
+}
+.densification-card.gradient-card { border-left: 3px solid #f59e0b; }
+.densification-card.clone-card    { border-left: 3px solid var(--success); }
+.densification-card.split-card    { border-left: 3px solid var(--accent); }
+.gradient-card .densification-solution-label { color: #f59e0b; }
+.densification-card svg        { flex-shrink: 0; }
+.densification-canvas {
+  flex-shrink: 0;
+  width: 200px;
+  height: 110px;
+  border-radius: var(--radius);
+}
+.densification-solution-label {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-1);
+}
+.clone-card .densification-solution-label { color: var(--success); }
+.split-card .densification-solution-label { color: var(--accent); }
+.densification-solution-text {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+@media (max-width: 520px) {
+  .densification-card { flex-direction: column; align-items: flex-start; gap: var(--space-3); }
+}
+
 /* References */
 .reading-references {
   margin-top: var(--space-10);
