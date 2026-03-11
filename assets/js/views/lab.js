@@ -4,7 +4,7 @@
 
 import { getApp } from '../app.js';
 import { markLabVisited, markLabColabClicked, isLabVisited } from '../store.js';
-import { parseContentWithMath } from '../utils.js';
+import { parseContentWithMath, renderInlineWithMath } from '../utils.js';
 
 function navArrow(item, moduleId, direction) {
   if (!item) return `<div class="nav-arrow-spacer"></div>`;
@@ -35,7 +35,7 @@ export default function renderLab(labData, moduleData) {
     .map((o, i) => `
       <div style="display:flex;align-items:flex-start;gap:var(--space-3);padding:var(--space-3) 0;border-bottom:1px solid var(--border);">
         <div style="width:24px;height:24px;border-radius:50%;background:var(--success-bg);color:var(--success);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;">${i + 1}</div>
-        <span style="font-size:var(--font-size-sm)">${o}</span>
+        <span style="font-size:var(--font-size-sm)">${renderInlineWithMath(o)}</span>
       </div>`)
     .join('');
 
